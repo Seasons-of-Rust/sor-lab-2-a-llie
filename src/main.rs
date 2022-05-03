@@ -51,7 +51,7 @@ fn calculate_safety_status(
 ) -> bool {
     if !wolves_nearby || day_time || has_carrot || friends_nearby > 3 {
         return true;
-    }else{
+    } else {
         return false;
     }
 }
@@ -73,16 +73,17 @@ fn validate_simulation() {
 fn simulate(starting_rabbits: i128) -> i32 {
     let mut count = 1;
     let mut rabbits = starting_rabbits;
-    loop{
-        if rabbits % 2 == 0{
+    loop {
+        if rabbits % 2 == 0 {
             rabbits = rabbits / 2;
-        }else{
-            rabbits= 3*(rabbits) + 1;
+        } else {
+            rabbits = 3 * (rabbits) + 1;
         }
-        if rabbits == 1{
+        if rabbits == 1 {
             break;
         }
-    count+=1;}
+        count += 1;
+    }
     return count;
 }
 
